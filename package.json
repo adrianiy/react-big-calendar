@@ -1,5 +1,5 @@
 {
-  "name": "react-big-calendar",
+  "name": "@adrian.insua/react-big-calendar",
   "version": "1.17.1",
   "description": "Calendar! with events",
   "author": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jquense/react-big-calendar.git"
+    "url": "git+https://github.com/adrianiy/react-big-calendar.git"
   },
   "publishConfig": {
     "access": "public",

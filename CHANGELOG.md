@@ -1,3 +1,11 @@
+## [1.0.1](https://github.com/adrianiy/react-big-calendar/compare/v1.0.0...v1.0.1) (2025-02-26)
+
+
+### Bug Fixes
+
+* added new parameter to getHeight ([c2d3f8d](https://github.com/adrianiy/react-big-calendar/commit/c2d3f8d0c741d3dc8b5cf780e939299ec692f086))
+* added new parameter to getHeight ([#1](https://github.com/adrianiy/react-big-calendar/issues/1)) ([7827251](https://github.com/adrianiy/react-big-calendar/commit/7827251094c613905793ad2f7ab3d1569f316bc0))
+
 # 1.0.0 (2025-02-21)
 
 

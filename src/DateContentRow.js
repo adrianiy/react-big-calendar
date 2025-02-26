@@ -47,7 +47,7 @@ class DateContentRow extends React.Component {
 
   getRowLimit() {
     /* Guessing this only gets called on the dummyRow */
-    const eventHeight = getHeight(this.eventRowRef.current)
+    const eventHeight = getHeight(this.eventRowRef.current, true)
     const headingHeight = this.headingRowRef?.current
       ? getHeight(this.headingRowRef.current)
       : 0
@@ -181,7 +181,11 @@ class DateContentRow extends React.Component {
             </div>
           )}
           <ScrollableWeekComponent>
-            <WeekWrapper isAllDay={isAllDay} {...eventRowProps} rtl={this.props.rtl}>
+            <WeekWrapper
+              isAllDay={isAllDay}
+              {...eventRowProps}
+              rtl={this.props.rtl}
+            >
               {levels.map((segs, idx) => (
                 <EventRow key={idx} segments={segs} {...eventRowProps} />
               ))}

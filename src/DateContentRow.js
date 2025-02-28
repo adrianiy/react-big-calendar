@@ -49,9 +49,10 @@ class DateContentRow extends React.Component {
     /* Guessing this only gets called on the dummyRow */
     const eventHeight = getHeight(this.eventRowRef.current, true)
     const headingHeight = this.headingRowRef?.current
-      ? getHeight(this.headingRowRef.current)
+      ? getHeight(this.headingRowRef.current, true)
       : 0
-    const eventSpace = getHeight(this.containerRef.current) - headingHeight
+    const eventSpace =
+      getHeight(this.containerRef.current, true) - headingHeight
 
     return Math.max(Math.floor(eventSpace / eventHeight), 1)
   }

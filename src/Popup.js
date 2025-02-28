@@ -1,38 +1,9 @@
 import React, { useLayoutEffect } from 'react'
 import PropTypes from 'prop-types'
-import getOffset from 'dom-helpers/offset'
 
 import useClickOutside from './hooks/useClickOutside'
 import EventCell from './EventCell'
 import { isSelected } from './utils/selection'
-
-/**
- * Changes to react-overlays cause issue with auto positioning,
- * so we need to manually calculate the position of the popper,
- * and constrain it to the Month container.
- */
-function getPosition({ target, offset, container, box }) {
-  const { top, left, width, height } = getOffset(target)
-  const {
-    top: cTop,
-    left: cLeft,
-    width: cWidth,
-    height: cHeight,
-  } = getOffset(container)
-  const { width: bWidth, height: bHeight } = getOffset(box)
-  const viewBottom = cTop + cHeight
-  const viewRight = cLeft + cWidth
-  const bottom = top + bHeight
-  const right = left + bWidth
-  const { x, y } = offset
-  const topOffset = bottom > viewBottom ? top - bHeight - y : top + y + height
-  const leftOffset = right > viewRight ? left + x - bWidth + width : left + x
-
-  return {
-    topOffset,
-    leftOffset,
-  }
-}
 
 function Pop({
   containerRef,
@@ -56,12 +27,22 @@ function Pop({
 }) {
   useClickOutside({ ref: popperRef, callback: show })
   useLayoutEffect(() => {
-    const { topOffset, leftOffset } = getPosition({
-      target,
-      offset,
-      container: containerRef.current,
-      box: popperRef.current,
-    })
+    if (!popperRef.current || !containerRef.current || !target) return
+
+    const targetRect = target.getBoundingClientRect()
+    const containerRect = containerRef.current.getBoundingClientRect()
+    const popperRect = popperRef.current.getBoundingClientRect()
+
+    const topOffset =
+      targetRect.bottom + offset.y > containerRect.bottom
+        ? targetRect.top - popperRect.height - offset.y
+        : targetRect.bottom + offset.y
+
+    const leftOffset =
+      targetRect.right + popperRect.width > containerRect.right
+        ? targetRect.left - popperRect.width + targetRect.width
+        : targetRect.left
+
     popperRef.current.style.top = `${topOffset}px`
     popperRef.current.style.left = `${leftOffset}px`
     // eslint-disable-next-line react-hooks/exhaustive-deps

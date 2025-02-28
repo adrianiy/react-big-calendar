@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/adrianiy/react-big-calendar/compare/v1.0.1...v1.0.2) (2025-02-28)
+
+
+### Bug Fixes
+
+* updated pop method ([#2](https://github.com/adrianiy/react-big-calendar/issues/2)) ([63fd097](https://github.com/adrianiy/react-big-calendar/commit/63fd097750d9292b4b285d51555773e884ddd0cc))
+
 ## [1.0.1](https://github.com/adrianiy/react-big-calendar/compare/v1.0.0...v1.0.1) (2025-02-26)
 
 

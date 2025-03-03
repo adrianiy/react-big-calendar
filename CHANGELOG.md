@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/adrianiy/react-big-calendar/compare/v1.0.3...v1.0.4) (2025-03-03)
+
+
+### Bug Fixes
+
+* updated useLayoutEffect ([#4](https://github.com/adrianiy/react-big-calendar/issues/4)) ([e534108](https://github.com/adrianiy/react-big-calendar/commit/e5341084a65f9e1b0c0e19b422066eee6fb48596))
+
 ## [1.0.3](https://github.com/adrianiy/react-big-calendar/compare/v1.0.2...v1.0.3) (2025-02-28)
 
 

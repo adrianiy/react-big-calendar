@@ -30,22 +30,32 @@ function Pop({
     if (!popperRef.current || !containerRef.current || !target) return
 
     const targetRect = target.getBoundingClientRect()
+    const containerRect = containerRef.current.getBoundingClientRect()
     const popperRect = popperRef.current.getBoundingClientRect()
 
-    let topOffset = targetRect.bottom + offset.y
+    // eslint-disable-next-line
+    console.log('targetRect', targetRect)
+    // eslint-disable-next-line
+    console.log('containerRect', containerRect)
+    // eslint-disable-next-line
+    console.log('popperRect', popperRect)
+    // eslint-disable-next-line
+    console.log('offset', offset)
 
-    if (topOffset + popperRect.height > window.innerHeight) {
-      topOffset = targetRect.top - popperRect.height - offset.y
-    }
+    const topOffset =
+      targetRect.bottom + offset.y > containerRect.bottom
+        ? targetRect.top - popperRect.height - offset.y
+        : targetRect.bottom + offset.y
 
-    let leftOffset = targetRect.left
-    if (leftOffset + popperRect.width > window.innerWidth) {
-      leftOffset = targetRect.right - popperRect.width
-    }
+    const leftOffset =
+      targetRect.right + popperRect.width > containerRect.right
+        ? targetRect.left - popperRect.width + targetRect.width
+        : targetRect.left
 
     popperRef.current.style.top = `${topOffset}px`
     popperRef.current.style.left = `${leftOffset}px`
-  }, [offset, target, containerRef, popperRef])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [offset.x, offset.y, target, containerRef, popperRef])
 
   const { width } = position
   const style = {

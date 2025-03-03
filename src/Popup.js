@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { useLayoutEffect } from 'react'
 import PropTypes from 'prop-types'
 
@@ -33,13 +34,9 @@ function Pop({
     const containerRect = containerRef.current.getBoundingClientRect()
     const popperRect = popperRef.current.getBoundingClientRect()
 
-    // eslint-disable-next-line
     console.log('targetRect', targetRect)
-    // eslint-disable-next-line
     console.log('containerRect', containerRect)
-    // eslint-disable-next-line
     console.log('popperRect', popperRect)
-    // eslint-disable-next-line
     console.log('offset', offset)
 
     const topOffset =

@@ -30,23 +30,22 @@ function Pop({
     if (!popperRef.current || !containerRef.current || !target) return
 
     const targetRect = target.getBoundingClientRect()
-    const containerRect = containerRef.current.getBoundingClientRect()
     const popperRect = popperRef.current.getBoundingClientRect()
 
-    const topOffset =
-      targetRect.bottom + offset.y > containerRect.bottom
-        ? targetRect.top - popperRect.height - offset.y
-        : targetRect.bottom + offset.y
+    let topOffset = targetRect.bottom + offset.y
 
-    const leftOffset =
-      targetRect.right + popperRect.width > containerRect.right
-        ? targetRect.left - popperRect.width + targetRect.width
-        : targetRect.left
+    if (topOffset + popperRect.height > window.innerHeight) {
+      topOffset = targetRect.top - popperRect.height - offset.y
+    }
+
+    let leftOffset = targetRect.left
+    if (leftOffset + popperRect.width > window.innerWidth) {
+      leftOffset = targetRect.right - popperRect.width
+    }
 
     popperRef.current.style.top = `${topOffset}px`
     popperRef.current.style.left = `${leftOffset}px`
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [offset.x, offset.y, target, containerRef, popperRef])
+  }, [offset, target, containerRef, popperRef])
 
   const { width } = position
   const style = {

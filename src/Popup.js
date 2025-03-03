@@ -49,6 +49,9 @@ function Pop({
         ? targetRect.left - popperRect.width + targetRect.width
         : targetRect.left
 
+    console.log('topOffset', topOffset)
+    console.log('leftOffset', leftOffset)
+
     popperRef.current.style.top = `${topOffset}px`
     popperRef.current.style.left = `${leftOffset}px`
     // eslint-disable-next-line react-hooks/exhaustive-deps

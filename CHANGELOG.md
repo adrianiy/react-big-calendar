@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/adrianiy/react-big-calendar/compare/v1.0.5...v1.0.6) (2025-03-05)
+
+
+### Bug Fixes
+
+* added fixed width ([#8](https://github.com/adrianiy/react-big-calendar/issues/8)) ([e2d9457](https://github.com/adrianiy/react-big-calendar/commit/e2d9457915a3818a0d9e7a003029f80ef032a828))
+
 ## [1.0.5](https://github.com/adrianiy/react-big-calendar/compare/v1.0.4...v1.0.5) (2025-03-03)
 
 

@@ -13,7 +13,6 @@ function Pop({
   selected,
   components,
   localizer,
-  position,
   show,
   events,
   slotStart,
@@ -30,6 +29,8 @@ function Pop({
   useLayoutEffect(() => {
     if (!popperRef.current || !containerRef.current || !target) return
 
+    const popupWidth = 250
+
     const targetRect = target.getBoundingClientRect()
     const containerRect = containerRef.current.getBoundingClientRect()
     const popperRect = popperRef.current.getBoundingClientRect()
@@ -45,24 +46,21 @@ function Pop({
         : targetRect.bottom + offset.y
 
     const leftOffset =
-      targetRect.right + popperRect.width > containerRect.right
-        ? targetRect.left - popperRect.width + targetRect.width
+      targetRect.right + popupWidth > containerRect.right
+        ? targetRect.left - popupWidth + targetRect.width
         : targetRect.left
 
     console.log('topOffset', topOffset)
     console.log('leftOffset', leftOffset)
 
+    popperRef.current.style.width = `${popupWidth}px`
     popperRef.current.style.top = `${topOffset}px`
     popperRef.current.style.left = `${leftOffset}px`
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [offset.x, offset.y, target, containerRef, popperRef])
 
-  const { width } = position
-  const style = {
-    minWidth: width + width / 2,
-  }
   return (
-    <div style={style} className="rbc-overlay" ref={popperRef}>
+    <div className="rbc-overlay" ref={popperRef}>
       <div className="rbc-overlay-header">
         {localizer.format(slotStart, 'dayHeaderFormat')}
       </div>

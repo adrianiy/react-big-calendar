@@ -125,6 +125,25 @@
   background-color: $today-highlight-bg;
 }
 
+.rbc-overlay {
+  position: absolute;
+  z-index: $event-zindex + 1;
+  border: 1px solid #e5e5e5;
+  background-color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  padding: 10px;
+
+  > * + * {
+    margin-top: 1px;
+  }
+}
+
+.rbc-overlay-header {
+  border-bottom: 1px solid #e5e5e5;
+  margin: -10px -10px 5px -10px;
+  padding: 2px 10px;
+}
+
 @import './toolbar';
 @import './event';
 @import './month';

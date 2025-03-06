@@ -39,11 +39,12 @@ function Pop({
     console.log('containerRect', containerRect)
     console.log('popperRect', popperRect)
     console.log('offset', offset)
+    console.log('window.scrollY', window.scrollY)
 
     const topOffset =
-      targetRect.bottom + offset.y > containerRect.bottom
-        ? targetRect.top - popperRect.height - offset.y
-        : targetRect.bottom + offset.y
+      targetRect.bottom + offset.y > containerRect.bottom + window.scrollY
+        ? targetRect.top - popperRect.height - offset.y + window.scrollY
+        : targetRect.bottom + offset.y + window.scrollY
 
     const leftOffset =
       targetRect.right + popupWidth > containerRect.right

@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/adrianiy/react-big-calendar/compare/v1.0.6...v1.0.7) (2025-03-06)
+
+
+### Bug Fixes
+
+* adjust pop up height ([#9](https://github.com/adrianiy/react-big-calendar/issues/9)) ([0efd6bf](https://github.com/adrianiy/react-big-calendar/commit/0efd6bfe7959b1be8bc79e1bc99d5894965f9c15))
+
 ## [1.0.6](https://github.com/adrianiy/react-big-calendar/compare/v1.0.5...v1.0.6) (2025-03-05)
 
 

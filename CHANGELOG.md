@@ -1,3 +1,10 @@
+## [1.0.8](https://github.com/adrianiy/react-big-calendar/compare/v1.0.7...v1.0.8) (2025-03-06)
+
+
+### Bug Fixes
+
+* overlay styles ([#10](https://github.com/adrianiy/react-big-calendar/issues/10)) ([bbfdd1c](https://github.com/adrianiy/react-big-calendar/commit/bbfdd1ccbff3d83451b26264ba9044a059955d35))
+
 ## [1.0.7](https://github.com/adrianiy/react-big-calendar/compare/v1.0.6...v1.0.7) (2025-03-06)
 
 

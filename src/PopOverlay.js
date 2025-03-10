@@ -4,6 +4,7 @@ import { Overlay } from 'react-overlays'
 import Popup from './Popup'
 
 function CalOverlay({
+  container,
   containerRef,
   popupOffset = 5,
   overlay,
@@ -36,6 +37,7 @@ function CalOverlay({
       placement="bottom"
       onHide={onHide}
       target={overlay.target}
+      container={container}
     >
       {({ props }) => (
         <Popup

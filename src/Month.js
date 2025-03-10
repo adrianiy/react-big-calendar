@@ -235,6 +235,7 @@ class MonthView extends React.Component {
         show={!!overlay.position}
         overlayDisplay={this.overlayDisplay}
         onHide={onHide}
+        container={this.containerRef.current}
       />
     )
 

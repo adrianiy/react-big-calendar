@@ -1,3 +1,10 @@
+## [1.0.9](https://github.com/adrianiy/react-big-calendar/compare/v1.0.8...v1.0.9) (2025-03-10)
+
+
+### Bug Fixes
+
+* moved pop up inside app ([#11](https://github.com/adrianiy/react-big-calendar/issues/11)) ([2d5cc02](https://github.com/adrianiy/react-big-calendar/commit/2d5cc0244f8568107e4394fd5edb48c8f6eb7c54))
+
 ## [1.0.8](https://github.com/adrianiy/react-big-calendar/compare/v1.0.7...v1.0.8) (2025-03-06)
 
 

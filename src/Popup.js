@@ -41,15 +41,26 @@ function Pop({
     console.log('offset', offset)
     console.log('window.scrollY', window.scrollY)
 
+    console.log(
+      'targetRect.bottom + offset.y > containerRect.bottom',
+      targetRect.bottom,
+      offset.y,
+      containerRect.bottom,
+      'targetRect.top - popperRect.height',
+      targetRect.top,
+      popperRect.height,
+      targetRect.bottom
+    )
+
     const topOffset =
-      targetRect.bottom + offset.y > containerRect.bottom + window.scrollY
-        ? targetRect.top - popperRect.height - offset.y + window.scrollY
-        : targetRect.bottom + offset.y + window.scrollY
+      targetRect.bottom + offset.y > containerRect.bottom
+        ? targetRect.top - popperRect.height
+        : targetRect.bottom - popupWidth - 40 + window.scrollY
 
     const leftOffset =
       targetRect.right + popupWidth > containerRect.right
         ? targetRect.left - popupWidth + targetRect.width
-        : targetRect.left
+        : targetRect.left - 100
 
     console.log('topOffset', topOffset)
     console.log('leftOffset', leftOffset)

@@ -34,6 +34,8 @@ function Pop({
     const targetRect = target.getBoundingClientRect()
     const containerRect = containerRef.current.getBoundingClientRect()
     const popperRect = popperRef.current.getBoundingClientRect()
+    const parentOfPopper = popperRef.current.parentElement
+    const rbcDayBg = parentOfPopper.querySelector('.rbc-day-bg')
 
     console.log('targetRect', targetRect)
     console.log('containerRect', containerRect)
@@ -65,7 +67,14 @@ function Pop({
     console.log('topOffset', topOffset)
     console.log('leftOffset', leftOffset)
 
-    popperRef.current.style.width = `${popupWidth}px`
+    if (rbcDayBg) {
+      const rbcDayBgWidth = rbcDayBg.getBoundingClientRect().width
+
+      if (rbcDayBgWidth && rbcDayBgWidth > 0) {
+        popperRef.current.style.minWidth = `${rbcDayBgWidth}px`
+      }
+    }
+
     popperRef.current.style.top = `${topOffset}px`
     popperRef.current.style.left = `${leftOffset}px`
     // eslint-disable-next-line react-hooks/exhaustive-deps

@@ -1,3 +1,10 @@
+## [1.0.10](https://github.com/adrianiy/react-big-calendar/compare/v1.0.9...v1.0.10) (2025-03-14)
+
+
+### Bug Fixes
+
+* modal width ([#12](https://github.com/adrianiy/react-big-calendar/issues/12)) ([62f2c05](https://github.com/adrianiy/react-big-calendar/commit/62f2c0521b583a17b482aa9d94a2dbf081b3614b))
+
 ## [1.0.9](https://github.com/adrianiy/react-big-calendar/compare/v1.0.8...v1.0.9) (2025-03-10)
 
 

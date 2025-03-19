@@ -37,22 +37,6 @@ function Pop({
     const parentOfPopper = popperRef.current.parentElement
     const rbcDayBg = parentOfPopper.querySelector('.rbc-day-bg')
 
-    console.log('targetRect', targetRect)
-    console.log('containerRect', containerRect)
-    console.log('popperRect', popperRect)
-    console.log('offset', offset)
-    console.log('window.scrollY', window.scrollY)
-
-    console.log(
-      'targetRect.bottom + offset.y > containerRect.bottom',
-      targetRect.bottom,
-      offset.y,
-      containerRect.bottom,
-      'targetRect.top - popperRect.height',
-      targetRect.top,
-      popperRect.height,
-      targetRect.bottom
-    )
     const topOffset =
       targetRect.bottom + offset.y > containerRect.bottom + window.scrollY
         ? targetRect.top - popperRect.height - offset.y + window.scrollY
@@ -62,9 +46,6 @@ function Pop({
       targetRect.right + popupWidth > containerRect.right
         ? targetRect.left - popupWidth + targetRect.width
         : targetRect.left
-
-    console.log('topOffset', topOffset)
-    console.log('leftOffset', leftOffset)
 
     if (rbcDayBg) {
       const rbcDayBgWidth = rbcDayBg.getBoundingClientRect().width

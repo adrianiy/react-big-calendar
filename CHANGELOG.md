@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/adrianiy/react-big-calendar/compare/v1.0.11...v1.1.0) (2025-03-19)
+
+
+### Features
+
+* removed logs ([#14](https://github.com/adrianiy/react-big-calendar/issues/14)) ([d32e228](https://github.com/adrianiy/react-big-calendar/commit/d32e22879bcca78d7e2e4a4235ca0154297df607))
+
 ## [1.0.11](https://github.com/adrianiy/react-big-calendar/compare/v1.0.10...v1.0.11) (2025-03-14)
 
 
